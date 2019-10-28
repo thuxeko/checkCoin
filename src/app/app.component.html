@@ -11,11 +11,28 @@
 </head>
 
 <body>
-  <app-nav-bar></app-nav-bar>
-  <div class='containe'>
-      <div class='row'>
-          <router-outlet></router-outlet>
+  <div class="navigation-wrap bg-light start-header start-style">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <app-nav-bar></app-nav-bar>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <div class="section full-height">
+    <div class="absolute-center">
+      <div class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 

@@ -172,7 +172,7 @@ body {
   top: 10%;
   left: 0;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 20px;
   transform: translateY(-50%);
   z-index: 20;
 }
@@ -531,5 +531,16 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   box-shadow: 0 0 0 20px rgba(12, 12, 12, 0.1);
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Other */
+.pd-10 {
+  padding-left: 10px;
+}

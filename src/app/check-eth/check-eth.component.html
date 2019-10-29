@@ -1,4 +1,21 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">Thông tin</div>
-    <div class="panel-body">Panel Content</div>
-</div>
+<p-panel header="Thông tin">
+    <div class="ui-g">
+        <div class="ui-g-12">
+            <label>Kiểu tìm kiếm: </label>
+            <p-radioButton class="pd-10" name="loaiTK" value="L1" label="Nhập ví" [(ngModel)]="loaiTimKiem"
+                (click)="changeLoai()">
+            </p-radioButton>
+            <p-radioButton class="pd-10" name="loaiTK" value="L2" label="Import File" [(ngModel)]="loaiTimKiem"
+                (click)="changeLoai()">
+            </p-radioButton>
+        </div>
+        <div class="ui-g-12">
+            <span class="ui-float-label" *ngIf="hasImport == 0">
+                <textarea id="float-input" style="width: 100%" pInputTextarea [(ngModel)]="addrWallet"></textarea>
+                <label for="float-input">Nhập tối đa 100 ví. Lưu ý: CÁC VÍ NGĂN CÁCH NHAU BẰNG DẤU ';'</label>
+            </span>
+            <p-fileUpload *ngIf="hasImport == 1" mode="basic" name="demo[]" accept="image/*" maxFileSize="1000000">
+            </p-fileUpload>
+        </div>
+    </div>
+</p-panel>

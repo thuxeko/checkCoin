@@ -6,7 +6,12 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CheckEthComponent } from './check-eth/check-eth.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule } from './shared/shared.module';
+import { PanelModule } from 'primeng/panel';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { FormsModule } from '@angular/forms';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { FileUploadModule } from 'primeng/fileupload';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,10 +19,14 @@ import { SharedModule } from './shared/shared.module';
     CheckEthComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    PanelModule,
+    RadioButtonModule,
+    InputTextareaModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

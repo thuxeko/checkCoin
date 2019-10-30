@@ -12,24 +12,14 @@
 
 <body>
   <div class="navigation-wrap bg-light start-header start-style">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <app-nav-bar></app-nav-bar>
-        </div>
-      </div>
-    </div>
+    <app-nav-bar></app-nav-bar>
   </div>
 
-  <div class="section full-height">
-    <div class="absolute-center">
-      <div class="section">
-        <div class="container" style="padding-top: 10rem;">
-          <router-outlet></router-outlet>
-        </div>
-      </div>
+  <section class="pd-main">
+    <div class="container">
+      <router-outlet></router-outlet>
     </div>
-  </div>
+  </section>
 </body>
 
 </html>

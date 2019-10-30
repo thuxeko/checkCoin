@@ -11,6 +11,9 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { FormsModule } from '@angular/forms';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FileUploadModule } from 'primeng/fileupload';
+import { BaseService } from './services/baseService.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { FileUploadModule } from 'primeng/fileupload';
     CheckEthComponent
   ],
   imports: [
+    NgbModule,
+    NgbPaginationModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,
@@ -26,9 +31,12 @@ import { FileUploadModule } from 'primeng/fileupload';
     PanelModule,
     RadioButtonModule,
     InputTextareaModule,
-    FileUploadModule
+    FileUploadModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    BaseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,12 +10,54 @@
             </p-radioButton>
         </div>
         <div class="ui-g-12">
-            <span class="ui-float-label" *ngIf="hasImport == 0">
-                <textarea id="float-input" style="width: 100%" pInputTextarea [(ngModel)]="addrWallet"></textarea>
-                <label for="float-input">Nhập tối đa 100 ví. Lưu ý: CÁC VÍ NGĂN CÁCH NHAU BẰNG DẤU ';'</label>
-            </span>
-            <p-fileUpload *ngIf="hasImport == 1" mode="basic" name="demo[]" accept="image/*" maxFileSize="1000000">
-            </p-fileUpload>
+            <label>Contract Token: </label>
+            <div class="row">
+                <div class="col-9 col-sm-9">
+                    <input [(ngModel)]="tokenContract" id="float-input" type="text" class="form-control" maxlength="42"
+                        (keyup.enter)="getName()" placeholder="Nhập contract của token cần check" placement="top"
+                        ngbTooltip="Sau khi nhập nhấn Enter để hiển thị tên Token">
+                </div>
+                <div class="col-3 col-sm-3" style="padding-left: 0;">
+                    <input [(ngModel)]="tokenName" type="text" class="form-control" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="ui-g-12">
+            <label>Địa chỉ ví: </label>
+            <textarea *ngIf="hasImport == 0" id="float-input" style="width: 100%" pInputTextarea
+                [(ngModel)]="addrWallet" placeholder="Nhập tối đa 100 ví. Lưu ý: CÁC VÍ NGĂN CÁCH NHAU BẰNG DẤU ';'"
+                maxlength="4355"></textarea>
+            <!-- <p-fileUpload *ngIf="hasImport == 1" mode="basic" name="demo[]" accept="image/*" maxFileSize="1000000">
+            </p-fileUpload> -->
+        </div>
+        <div class="ui-g-12" style="text-align: center;">
+            <button type="button" class="btn btn-primary" (click)="checkWallet()">Check</button>
         </div>
     </div>
 </p-panel>
+
+<div style="padding-top: 10px;">
+    <p-panel header="Danh sách ví">
+        <div class="dt-responsive">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-primary">
+                            <th [ngStyle]="{'width': col.width, 'text-align' : col.align}" *ngFor="let col of lstCol"
+                                style="text-align: center;">{{col.label}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <ngb-pagination [maxSize]="5" [(page)]="page" [pageSize]="pageSize" [collectionSize]="collectionSize"
+                    [directionLinks]="true" [boundaryLinks]="true" (pageChange)="onGetData()">
+                </ngb-pagination>
+            </div>
+        </div>
+    </p-panel>
+</div>
